@@ -1,8 +1,9 @@
 import React from "react";
+import StyledSignIn from "./styles/auth/signIn/StyledSignIn";
 
 function SignIn() {
   return (
-    <div>
+    <StyledSignIn>
       <h1>SignIn</h1>
       <form>
         <input type="email" placeholder="Email" />
@@ -10,7 +11,7 @@ function SignIn() {
         <button type="submit">Sign In</button>
       </form>
       <span>{" Don't "} have an account? Sign Up</span>
-    </div>
+    </StyledSignIn>
   );
 }
 

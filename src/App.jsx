@@ -1,12 +1,25 @@
+// import React from "react";
+// import { RecoilRoot } from "recoil";
+// import Router from "./Router";
+
+// function App() {
+//   return (
+//     <RecoilRoot>
+//       <Router />
+//     </RecoilRoot>
+//   );
+// }
+
+// export default App;
+
 import React from "react";
-import { RecoilRoot } from "recoil";
-import Router from "./Router";
+import SignIn from "./pages/auth/signIn/SignIn";
 
 function App() {
   return (
-    <RecoilRoot>
-      <Router />
-    </RecoilRoot>
+    <div>
+      <SignIn />
+    </div>
   );
 }
 
