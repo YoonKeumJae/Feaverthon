@@ -1,7 +1,7 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./pages/main";
-import Favorites from "./pages/favorites";
+import Favorite from "./pages/favorite";
 
 const router = createBrowserRouter([
   {
@@ -9,8 +9,8 @@ const router = createBrowserRouter([
     element: <Main />,
   },
   {
-    path: "favorites",
-    element: <Favorites />,
+    path: "favorite",
+    element: <Favorite />,
   },
 ]);
 
