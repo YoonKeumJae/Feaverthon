@@ -1,6 +1,6 @@
 import React from "react";
-import { Router } from "react-router-dom";
 import { RecoilRoot } from "recoil";
+import Router from "./Router";
 
 function App() {
   return (
