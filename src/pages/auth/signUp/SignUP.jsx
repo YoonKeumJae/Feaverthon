@@ -29,8 +29,6 @@ function SignUp() {
         <input type="password" placeholder="Password Check" />
         <button type="submit">Sign In</button>
       </form>
-      <span>{" Don't "} have an account? </span>
-      <span>Sign Up</span> {/* 이 부분을 클릭하면 SignIn 페이지로 이동 */}
     </div>
   );
 }
