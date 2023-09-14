@@ -10,7 +10,7 @@ export default function Mapbottom() {
     height: 10vh;
     border: 1px solid black;
   `;
-  
+
   const Bottomli = styled.li`
     display: flex;
     justify-content: center;
@@ -21,12 +21,22 @@ export default function Mapbottom() {
   `;
   return (
     <div>
-      <Bottom >
-        <Bottomli><img src="#" alt="#" /></Bottomli>
-        <Bottomli><img src="#" alt="#" /></Bottomli>
-        <Bottomli><img src="#" alt="#" /></Bottomli>
-        <Bottomli><img src="#" alt="#" /></Bottomli>
-        <Bottomli><img src="#" alt="#" /></Bottomli>
+      <Bottom>
+        <Bottomli>
+          <img src="#" alt="#" />
+        </Bottomli>
+        <Bottomli>
+          <img src="#" alt="#" />
+        </Bottomli>
+        <Bottomli>
+          <img src="#" alt="#" />
+        </Bottomli>
+        <Bottomli>
+          <img src="#" alt="#" />
+        </Bottomli>
+        <Bottomli>
+          <img src="#" alt="#" />
+        </Bottomli>
       </Bottom>
     </div>
   );

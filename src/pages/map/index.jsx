@@ -7,8 +7,11 @@ import {
   ZoomControl,
 } from "react-kakao-maps-sdk";
 import Mapbottom from "./components/Mapbottom";
+import Search from "./components/Search";
 
-export default function BasicMap() {
+const { kakao } = window;
+
+export default function BasicMap(props) {
   const positions = [
     {
       title: "카카오",
@@ -36,9 +39,13 @@ export default function BasicMap() {
     border: 1px solid black;
   `;
   const InMain = styled.div``;
+
+
+
   return (
     <Main>
       <InMain>
+        <Search/>
         <Map
           className="myMap"
           style={{ width: "50vh", height: "90vh" }}
@@ -59,7 +66,7 @@ export default function BasicMap() {
               title={position.title}
             />
           ))}
-          <MapTypeControl position={"TOPRIGHT"} />
+          {/* <MapTypeControl position={"TOPRIGHT"} /> */}
           <ZoomControl position={"RIGHT"} />
         </Map>
         <Mapbottom />
