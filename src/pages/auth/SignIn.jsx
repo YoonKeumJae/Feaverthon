@@ -1,5 +1,5 @@
 import React from "react";
-import StyledSignIn from "../../styles/auth";
+import { StyledSignIn } from "../../styles/auth";
 
 function SignIn() {
   return (
@@ -10,7 +10,8 @@ function SignIn() {
         <input type="password" placeholder="Password" />
         <button type="submit">Sign In</button>
       </form>
-      <span>{" Don't "} have an account? Sign Up</span>
+      <span>{" Don't "}you have an account?</span>
+      <span>Sign Up</span>
     </StyledSignIn>
   );
 }
