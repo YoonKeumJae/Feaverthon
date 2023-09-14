@@ -11,7 +11,9 @@ import Mapbottom from "./components/Mapbottom";
 import SwipeableEdgeDrawer from "./components/Bottomsheet";
 import Search from "./components/Search";
 
-export default function BasicMap() {
+const { kakao } = window;
+
+export default function BasicMap(props) {
   const positions = [
     {
       title: "카카오",
@@ -38,6 +40,9 @@ export default function BasicMap() {
     height: 100vh;
   `;
   const InMain = styled.div``;
+
+
+
   return (
     <Container maxWidth='sx' style={{border:'1px solid black'}}>
       <Main>

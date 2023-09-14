@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Map } from "react-kakao-maps-sdk";
 import styled from "styled-components";
 import searchimg from '/images/search-normal.png';
 

@@ -2,8 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./pages/main";
 import BasicMap from "./pages/map";
-import Mapmain from "./pages/map";
-import Mapsearch from "./pages/map/search";
+import Favorite from "./pages/favorite";
 
 const router = createBrowserRouter([
   {
@@ -15,8 +14,8 @@ const router = createBrowserRouter([
     element: <BasicMap />,
   },
   {
-    path: "/Mapsearch",
-    element: <Mapsearch />,
+    path: "favorite",
+    element: <Favorite />,
   },
 ]);
 
