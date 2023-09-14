@@ -18,7 +18,7 @@ import SignIn from "./pages/auth/SignIn";
 
 function App() {
   return (
-    <Container>
+    <Container maxWidth="xs">
       <SignIn />
     </Container>
   );
