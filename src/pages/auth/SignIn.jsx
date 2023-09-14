@@ -1,5 +1,5 @@
 import React from "react";
-import StyledSignIn from "./styles/auth/signIn/StyledSignIn";
+import StyledSignIn from "../../styles/auth";
 
 function SignIn() {
   return (

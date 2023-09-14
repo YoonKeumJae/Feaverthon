@@ -13,7 +13,7 @@
 // export default App;
 
 import React from "react";
-import SignIn from "./pages/auth/signIn/SignIn";
+import SignIn from "./pages/auth/SignIn";
 
 function App() {
   return (
