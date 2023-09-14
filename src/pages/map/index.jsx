@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Container } from '@mui/material';
 import {
   Map,
   MapMarker,
@@ -7,6 +8,8 @@ import {
   ZoomControl,
 } from "react-kakao-maps-sdk";
 import Mapbottom from "./components/Mapbottom";
+import SwipeableEdgeDrawer from "./components/Bottomsheet";
+import Search from "./components/Search";
 
 export default function BasicMap() {
   const positions = [
@@ -33,37 +36,37 @@ export default function BasicMap() {
     justify-content: center;
     width: 100%;
     height: 100vh;
-    border: 1px solid black;
   `;
   const InMain = styled.div``;
   return (
-    <Main>
-      <InMain>
-        <Map
-          className="myMap"
-          style={{ width: "50vh", height: "90vh" }}
-          center={{ lat: 33.5563, lng: 126.79581 }}
-          level={3}
-        >
-          {positions.map((position, index) => (
-            <MapMarker
-              key={`${position.title}-${position.latlng}`}
-              position={position.latlng}
-              image={{
-                src: "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png",
-                size: {
-                  width: 24,
-                  height: 35,
-                },
-              }}
-              title={position.title}
-            />
-          ))}
-          <MapTypeControl position={"TOPRIGHT"} />
-          <ZoomControl position={"RIGHT"} />
-        </Map>
-        <Mapbottom />
-      </InMain>
-    </Main>
+    <Container maxWidth='sx' style={{border:'1px solid black'}}>
+      <Main>
+      <Search/>
+        <InMain>
+          <Map
+            className="myMap"
+            style={{ width: "50vh", height: "90vh" }}
+            center={{ lat: 33.5563, lng: 126.79581 }}
+            level={3}
+          >
+            {positions.map((position, index) => (
+              <MapMarker
+                key={`${position.title}-${position.latlng}`}
+                position={position.latlng}
+                image={{
+                  src: "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png",
+                  size: {
+                    width: 24,
+                    height: 35,
+                  },
+                }}
+                title={position.title}
+              />
+            ))}
+          </Map>
+          <Mapbottom />
+        </InMain>
+      </Main>
+    </Container>
   );
 }
