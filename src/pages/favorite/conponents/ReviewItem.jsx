@@ -1,7 +1,8 @@
+import React from "react";
+import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import { Typography } from "@mui/material";
 import { Star } from "@phosphor-icons/react";
-import React from "react";
 
 const StyledRevieItem = styled.div`
   padding: 1rem 1.5rem;
@@ -38,29 +39,29 @@ const StyledRevieItem = styled.div`
   }
 `;
 
-export default function ReviewItem() {
+function ReviewItem({ title, category, address, tel, rating, reviews }) {
   return (
     <StyledRevieItem>
       <div className="img" />
       <div className="info">
         <div className="title">
-          <Typography variant="h6">뉴살라딘</Typography>
-          <Typography variant="body2">인도음식</Typography>
+          <Typography variant="h6">{title}</Typography>
+          <Typography variant="body2">{category}</Typography>
         </div>
         <div className="contact">
           <Typography className="address" variant="body2">
-            대구광역시 달서구 계대동문로 17
+            {address}
           </Typography>
           <Typography className="tel" variant="body2">
-            053-123-1234
+            {tel}
           </Typography>
         </div>
         <div className="detail">
           <div className="rating">
             <Star weight="fill" color="#EFBC06" />
-            <Typography variant="subtitle2">4.9</Typography>
+            <Typography variant="subtitle2">{rating}</Typography>
             <Typography variant="body2" className="reviewLabel">
-              (10 Reviews)
+              ({reviews} Review{reviews === 1 ? "" : "s"})
             </Typography>
           </div>
         </div>
@@ -68,3 +69,15 @@ export default function ReviewItem() {
     </StyledRevieItem>
   );
 }
+
+// typescript 대용..
+ReviewItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  address: PropTypes.string.isRequired,
+  tel: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+  reviews: PropTypes.number.isRequired,
+};
+
+export default ReviewItem;
