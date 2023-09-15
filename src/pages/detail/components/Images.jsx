@@ -12,10 +12,12 @@ const list = [
 const StyledImg = styled.div`
   width: 100%;
   aspect-ratio: 1/1;
+  background-position: center;
+  background-size: cover;
 `;
 
 const StyledCarousel = styled(Carousel)`
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 24px 24px;
   overflow: hidden;
   width: 100%;
   aspect-ratio: 1/1;
@@ -42,8 +44,8 @@ export default function Images() {
       }}
       indicatorContainerProps={{
         style: {
-          top: -60,
-          position: "relative",
+          top: "87%",
+          position: "absolute",
           zIndex: 90,
         },
       }}

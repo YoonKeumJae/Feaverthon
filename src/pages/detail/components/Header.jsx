@@ -8,6 +8,7 @@ const StyledHeader = styled(AppBar)`
   background: none;
   max-width: 444px;
   left: 50%;
+  top: 1rem;
   transform: translateX(-50%);
 
   .MuiToolbar-root {
