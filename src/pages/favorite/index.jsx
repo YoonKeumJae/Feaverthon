@@ -1,16 +1,8 @@
 import { Container, Tab, Tabs, Typography } from "@mui/material";
-<<<<<<< HEAD
 import React, { useState } from "react";
 import Header from "./components/Header";
 import BottomNav from "../../components/BottomNav";
 import ReviewItem from "./components/ReviewItem";
-=======
-import React, { useEffect, useState } from "react";
-import { List } from "@phosphor-icons/react";
-import Header from "./conponents/Header";
-import BottomNav from "../../components/BottomNav";
-import ReviewItem from "./conponents/ReviewItem";
->>>>>>> b939188 (doing)
 
 // const tab = ["전체", "대구", "경북", "서울", "부산"];
 const restaurant = [

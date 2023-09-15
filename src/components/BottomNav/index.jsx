@@ -1,11 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { IconButton } from "@mui/material";
-<<<<<<< HEAD
 import { List } from "@phosphor-icons/react";
-=======
-import PropTypes from "prop-types";
->>>>>>> b939188 (doing)
 import { StyledFooter, StyledCenterButton } from "./style";
 import menu from "./data";
 
