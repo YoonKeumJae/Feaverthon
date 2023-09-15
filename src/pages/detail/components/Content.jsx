@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import { Star } from "@phosphor-icons/react";
 import { Typography } from "@mui/material";
@@ -25,32 +26,71 @@ const StyledConetnt = styled.div`
   .title .category {
     color: #838e9a;
   }
+
   .description {
     color: #a0a5ba;
   }
+  .desEx .MuiTypography-root {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.3rem;
+  }
+
+  .desEx .more {
+    color: #222;
+    float: right;
+    margin-top: 2.6rem;
+    shape-outside: border-box;
+    padding: 3px 2px;
+  }
 `;
 
-export default function Content({ content }) {
+function Content({ data }) {
+  console.log(data.description.length);
   return (
     <StyledConetnt>
       <div className="rating">
-        <Star weight="fill" color="#EFBC06" />{" "}
+        <Star weight="fill" color="#EFBC06" />
         <Typography variant="subtitle2" className="label">
-          3.8 (5.3)
+          {data.rating} ({data.ratingCount})
         </Typography>
       </div>
       <div className="title">
         <Typography variant="h6" className="title">
-          뉴살라딘
+          {data.title}
         </Typography>
         <Typography variant="body2" className="category">
-          인도음식
+          {data.category}
         </Typography>
       </div>
-      <Typography variant="body2" className="description">
-        대구 달서구 계대동문에 위치한 뉴살라딘입니다. 현지 경력 10년이상의
-        네팔,파키스탄 요리사가 직접요리하는 인도 오리지날 정통커리입니다
-      </Typography>
+      <div className="description desEx">
+        {data.description.length > 100 ? (
+          <Typography variant="body2">
+            <Typography variant="button" className="more">
+              더보기
+            </Typography>
+            {data.description}
+          </Typography>
+        ) : (
+          <Typography variant="body2">{data.description}</Typography>
+        )}
+      </div>
     </StyledConetnt>
   );
 }
+
+// typescript 대용..
+Content.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string,
+    category: PropTypes.string,
+    rating: PropTypes.number,
+    ratingCount: PropTypes.number,
+    description: PropTypes.string,
+  }).isRequired,
+};
+
+export default Content;
