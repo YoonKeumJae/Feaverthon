@@ -1,5 +1,5 @@
 import { Container, Tab, Tabs, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { List } from "@phosphor-icons/react";
 import Header from "./conponents/Header";
 import BottomNav from "../../components/BottomNav";
@@ -50,6 +50,15 @@ export default function Favorites() {
     path: "/",
     icon: <List />,
   });
+
+  // useEffect(() => {
+  //   console.log(tab);
+  // }, [tab]);
+
+  // useEffect(() => {
+  //   console.log(tab[tabIndex - 1]);
+  // }, [tabIndex]);
+
   return (
     <Container maxWidth="xs" sx={{ p: 0, pt: 7 }}>
       <Header />
@@ -87,7 +96,7 @@ export default function Favorites() {
             );
           })
         : restaurant
-            .filter(({ location }) => location === tab[tabIndex])
+            .filter(({ location }) => location === tab[tabIndex - 1])
             .map((item) => (
               <ReviewItem
                 key={item.title}
@@ -99,6 +108,7 @@ export default function Favorites() {
                 reviews={item.reviews}
               />
             ))}
+
       <BottomNav centerMenu={centerMenu} setCenterMenu={setCenterMenu} />
     </Container>
   );

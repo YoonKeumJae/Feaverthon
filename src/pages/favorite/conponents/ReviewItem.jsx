@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
-import { Typography } from "@mui/material";
-import { Star } from "@phosphor-icons/react";
+import { IconButton, Typography } from "@mui/material";
+import { Heart, Star } from "@phosphor-icons/react";
 
 const StyledRevieItem = styled.div`
   padding: 1rem 1.5rem;
@@ -14,6 +14,7 @@ const StyledRevieItem = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
   }
   .img {
     height: 7rem;
@@ -22,9 +23,16 @@ const StyledRevieItem = styled.div`
     border-radius: 20px;
   }
 
-  .title * {
+  .title .titleLabel * {
     display: inline-block;
     margin-right: 0.75rem;
+  }
+  .title {
+    display: flex;
+    justify-content: space-between;
+  }
+  .title .MuiIconButton-root {
+    padding: 6px;
   }
 
   .contact,
@@ -35,7 +43,7 @@ const StyledRevieItem = styled.div`
   .rating {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.3rem;
   }
 `;
 
@@ -45,8 +53,13 @@ function ReviewItem({ title, category, address, tel, rating, reviews }) {
       <div className="img" />
       <div className="info">
         <div className="title">
-          <Typography variant="h6">{title}</Typography>
-          <Typography variant="body2">{category}</Typography>
+          <div className="titleLabel">
+            <Typography variant="h6">{title}</Typography>
+            <Typography variant="body2">{category}</Typography>
+          </div>
+          <IconButton>
+            <Heart size={20} />
+          </IconButton>
         </div>
         <div className="contact">
           <Typography className="address" variant="body2">
