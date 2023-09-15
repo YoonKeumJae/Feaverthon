@@ -1,11 +1,17 @@
 import { Container } from "@mui/material";
 import React from "react";
-import Header from "../favorite/components/Header";
+import Header from "./components/Header";
+import Images from "./components/Images";
+import Content from "./components/Content";
 
 export default function Detail() {
   return (
-    <Container maxWidth="xs" sx={{ p: 0, pt: 7 }}>
+    <Container maxWidth="xs" sx={{ px: "0 !important" }}>
       <Header />
+
+      <Images />
+
+      <Content />
     </Container>
   );
 }

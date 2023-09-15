@@ -1,6 +1,7 @@
 import React from "react";
 import { RecoilRoot } from "recoil";
 import Router from "./Router";
+import "./index.css";
 
 function App() {
   return (
