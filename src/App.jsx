@@ -13,13 +13,14 @@
 // export default App;
 
 import React from "react";
-import SignIn from "./pages/auth/signIn/SignIn";
+import { Container } from "@mui/material";
+import SignUp from "./pages/auth/SignUp";
 
 function App() {
   return (
-    <div>
-      <SignIn />
-    </div>
+    <Container maxWidth="xs">
+      <SignUp />
+    </Container>
   );
 }
 

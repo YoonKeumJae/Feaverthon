@@ -1,5 +1,9 @@
 import React from "react";
+<<<<<<< HEAD:src/pages/auth/signIn/SignIn.jsx
 import StyledSignIn from "../../../styles/auth/StyledSignIn";
+=======
+import { StyledSignIn } from "../../styles/auth";
+>>>>>>> feature/auth:src/pages/auth/SignIn.jsx
 
 function SignIn() {
   return (
@@ -12,7 +16,8 @@ function SignIn() {
         <button type="submit">Sign In</button>
         <button type="button">Sign In with Naver</button>
       </form>
-      <span>{" Don't "} have an account? Sign Up</span>
+      <span>{" Don't "}you have an account?</span>
+      <span>Sign Up</span>
     </StyledSignIn>
   );
 }

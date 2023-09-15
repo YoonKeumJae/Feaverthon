@@ -1,8 +1,10 @@
 import { React, useState } from "react";
+import { StyledSignUp } from "../../styles/auth";
 
 function SignUp() {
   const [email, setEmail] = useState("");
-  const [isValidEmail, setIsValidEmail] = useState(true);
+  const [isValidEmail, setIsValidEmail] = useState(false);
+  const [isDuplicatedEmail, setIsDuplicatedEmail] = useState(false); // [TODO] 이메일
   const [password, setPassword] = useState("");
   const [isSamePassword, setIsSamePassword] = useState(true);
 
@@ -32,15 +34,29 @@ function SignUp() {
     setIsValidEmail(validateEmail(email));
   }
 
-  // 이메일 중복 체크 로직 만들어야함
+  // 중복된 이메일인지 확인
+  function checkDuplicatedEmail() {
+    // 이메일 중복 체크 로직 만들어야함
+    setIsDuplicatedEmail(true);
+  }
 
   return (
-    <div>
+    <StyledSignUp>
       <h1>SignUp</h1>
       <form>
         <span>Email</span>
         <input type="email" placeholder="Email" onChange={handleEmailChange} />
-        {!isValidEmail && <span>이메일 형식이 올바르지 않습니다.</span>}
+        {!isValidEmail && (
+          <span className="warn">이메일 형식이 올바르지 않습니다.</span>
+        )}
+        <button
+          type="button"
+          onClick={checkDuplicatedEmail}
+          disabled={!isDuplicatedEmail}
+        >
+          중복 체크
+        </button>
+        <span>Password</span>
         <input
           type="password"
           placeholder="Password"
@@ -54,7 +70,7 @@ function SignUp() {
         {!isSamePassword && <span>비밀번호가 일치하지 않습니다.</span>}
         <button type="submit">Sign In</button>
       </form>
-    </div>
+    </StyledSignUp>
   );
 }
 
