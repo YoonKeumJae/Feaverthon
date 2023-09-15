@@ -1,60 +1,9 @@
-import styled from "@emotion/styled";
-import { IconButton } from "@mui/material";
-import { Heart, House, MagnifyingGlass, User } from "@phosphor-icons/react";
 import React from "react";
 import { useLocation } from "react-router-dom";
-import primaryColor from "../../common";
-
-const menu = [
-  {
-    path: "/",
-    icon: (isVisited) => (
-      <House
-        weight={isVisited ? "fill" : "thin"}
-        color={isVisited ? primaryColor : "#222"}
-      />
-    ),
-  },
-  {
-    path: "/search",
-    icon: (isVisited) => (
-      <MagnifyingGlass
-        weight={isVisited ? "fill" : "thin"}
-        color={isVisited ? primaryColor : "#222"}
-      />
-    ),
-  },
-  {
-    path: "/favorite",
-    icon: (isVisited) => (
-      <Heart
-        weight={isVisited ? "fill" : "thin"}
-        color={isVisited ? primaryColor : "#222"}
-      />
-    ),
-  },
-  {
-    path: "/mypage",
-    icon: (isVisited) => (
-      <User
-        weight={isVisited ? "fill" : "thin"}
-        color={isVisited ? primaryColor : "#222"}
-      />
-    ),
-  },
-];
-
-const StyledFooter = styled.div`
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 6rem;
-  max-width: 444px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.5rem;
-`;
+import { IconButton } from "@mui/material";
+import { List } from "@phosphor-icons/react";
+import { StyledFooter, StyledCenterButton } from "./style";
+import menu from "./data";
 
 export default function BottomNav() {
   const location = useLocation();
@@ -65,9 +14,19 @@ export default function BottomNav() {
   return (
     <StyledFooter>
       {menu.map((item, idx) => {
-        // 중간 동그라미 버튼 자리
+        if (idx === Math.floor(menu.length / 2))
+          return (
+            <React.Fragment key={item.path}>
+              <StyledCenterButton>
+                <List />
+              </StyledCenterButton>
+              <IconButton className="menuIcon">
+                {item.icon(pafilldex === idx)}
+              </IconButton>
+            </React.Fragment>
+          );
         return (
-          <IconButton key={item.path}>
+          <IconButton key={item.path} className="menuIcon">
             {item.icon(pafilldex === idx)}
           </IconButton>
         );
