@@ -1,6 +1,5 @@
 import { Container, Tab, Tabs, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import { List } from "@phosphor-icons/react";
+import React, { useState } from "react";
 import Header from "./conponents/Header";
 import BottomNav from "../../components/BottomNav";
 import ReviewItem from "./conponents/ReviewItem";
@@ -46,10 +45,6 @@ export default function Favorites() {
     ),
   );
   const [tabIndex, setTabIndex] = useState(0);
-  const [centerMenu, setCenterMenu] = useState({
-    path: "/",
-    icon: <List />,
-  });
 
   // useEffect(() => {
   //   console.log(tab);
@@ -109,7 +104,7 @@ export default function Favorites() {
               />
             ))}
 
-      <BottomNav centerMenu={centerMenu} setCenterMenu={setCenterMenu} />
+      <BottomNav />
     </Container>
   );
 }
