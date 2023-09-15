@@ -1,17 +1,14 @@
 import React from "react";
 import { Map, MapMarker, MarkerClusterer } from "react-kakao-maps-sdk";
-import mapPin from "../../asset/images/mappin.svg"
-import mapPin1 from "../../asset/images/mappin1.svg"
-import mapPin2 from "../../asset/images/mappin2.svg"
-
-const { kakao } = window;
+import mapPin from "../../asset/images/mappin.svg";
+import mapPin1 from "../../asset/images/mappin1.svg";
+import mapPin2 from "../../asset/images/mappin2.svg";
 
 const markings = {
-  0: "mapPin",
-  1: "mapPin1",
-  2: "mapPin2"
-}
-
+  0: mapPin,
+  1: mapPin1,
+  2: mapPin2,
+};
 
 export default function Marker() {
   const positions = [
@@ -38,16 +35,17 @@ export default function Marker() {
   ];
   return (
     <MarkerClusterer
-      averageCenter={true} // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정
+      averageCenter // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정
       minLevel={5} // 클러스터 할 최소 지도 레벨
     >
-      {
-        positions.map((position, index) => (
+      {positions.map((position, index) => {
+        const markerImage = markings[position.markings];
+        return (
           <MapMarker
             key={`${position.title}-${position.latlng}`}
             position={position.latlng}
             image={{
-              src: position.markings == 0 ? mapPin : (position.markings == 1 ? mapPin1 : mapPin2),
+              src: markerImage,
               size: {
                 width: 24,
                 height: 35,
@@ -55,8 +53,8 @@ export default function Marker() {
             }}
             title={position.title}
           />
-        ))
-      }
+        );
+      })}
     </MarkerClusterer>
-  )
+  );
 }
