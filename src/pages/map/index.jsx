@@ -25,13 +25,13 @@ export default function BasicMap(props) {
   const InMain = styled.div``;
 
   return (
-    <Container maxWidth="xs" style={{ border: "1px solid black" }}>
+    <Container maxWidth="xs">
       <Main>
         <Search />
         <InMain>
           <Map
             className="myMap"
-            style={{ width: "50vh", height: "90vh" }}
+            style={{ width: "50vh", maxWidth: "444px", height: "90vh" }}
             center={{ lat: 33.450705, lng: 126.570677 }}
             level={3}
           >
