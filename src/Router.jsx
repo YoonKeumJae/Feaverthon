@@ -1,31 +1,29 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Main from "./pages/main";
 import BasicMap from "./pages/map";
 import Favorite from "./pages/favorite";
 import Detail from "./pages/detail";
 import SignUp from "./pages/auth/SignUp";
+import MainWrapper from "./components/MainWrapper";
+import MainWrapper2 from "./components/MainWrapper2";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main />,
+    element: <MainWrapper />,
+    children: [
+      { index: true, element: <BasicMap /> },
+      { path: "favorite", element: <Favorite /> },
+      {
+        path: "detail/:id",
+        element: <Detail />,
+      },
+    ],
   },
   {
-    path: "/Basicmap",
-    element: <BasicMap />,
-  },
-  {
-    path: "favorite",
-    element: <Favorite />,
-  },
-  {
-    path: "detail/:id",
-    element: <Detail />,
-  },
-  {
-    path: "auth/signup",
-    element: <SignUp />,
+    path: "auth/",
+    element: <MainWrapper2 />,
+    children: [{ path: "signup", element: <SignUp /> }],
   },
 ]);
 

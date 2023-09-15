@@ -26,7 +26,7 @@ export default function BasicMap(props) {
   const InMain = styled.div``;
 
   return (
-    <Container maxWidth="sx" style={{ border: "1px solid black" }}>
+    <Container maxWidth="xs" style={{ border: "1px solid black" }}>
       <Main>
         <Search />
         <InMain>
