@@ -9,8 +9,13 @@
     "sourceType": "module"
   },
   "plugins": ["prettier"],
+  "ignorePatterns": ["vite.config.js"],
   "rules": {
     "comma-dangle": 0,
-    "prettier/prettier": ["error"]
+    "prettier/prettier": ["error"],
+    "react/require-default-props": 0,
+    "import/no-unresolved": 0,
+    "no-unused-vars": 1,
+    "jsx-a11y/alt-text": 1
   }
 }

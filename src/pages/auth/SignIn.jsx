@@ -1,9 +1,5 @@
 import React from "react";
-<<<<<<< HEAD:src/pages/auth/signIn/SignIn.jsx
-import StyledSignIn from "../../../styles/auth/StyledSignIn";
-=======
 import { StyledSignIn } from "../../styles/auth";
->>>>>>> feature/auth:src/pages/auth/SignIn.jsx
 
 function SignIn() {
   return (

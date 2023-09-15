@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Container } from '@mui/material';
+import { Container } from "@mui/material";
 import {
   Map,
   MapMarker,
   MapTypeControl,
   ZoomControl,
 } from "react-kakao-maps-sdk";
-import Mapbottom from "./components/Mapbottom";
+
 import SwipeableEdgeDrawer from "./components/Bottomsheet";
 import Search from "./components/Search";
 
@@ -41,12 +41,10 @@ export default function BasicMap(props) {
   `;
   const InMain = styled.div``;
 
-
-
   return (
-    <Container maxWidth='sx' style={{border:'1px solid black'}}>
+    <Container maxWidth="sx" style={{ border: "1px solid black" }}>
       <Main>
-      <Search/>
+        <Search />
         <InMain>
           <Map
             className="myMap"
@@ -69,7 +67,6 @@ export default function BasicMap(props) {
               />
             ))}
           </Map>
-          <Mapbottom />
         </InMain>
       </Main>
     </Container>
