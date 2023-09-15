@@ -5,7 +5,7 @@ import { List } from "@phosphor-icons/react";
 import { StyledFooter, StyledCenterButton } from "./style";
 import menu from "./data";
 
-export default function BottomNav() {
+function BottomNav({ centerMenu }) {
   const location = useLocation();
   const pafilldex = menu.findIndex(
     (object) => location.pathname && object.path === location.pathname,
@@ -34,3 +34,13 @@ export default function BottomNav() {
     </StyledFooter>
   );
 }
+
+// typescript 대용..
+// BottomNav.propTypes = {
+//   centerMenu: PropTypes.shape({
+//     path: PropTypes.string,
+//     icon: PropTypes.node,
+//   }).isRequired,
+// };
+
+export default BottomNav;
