@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Map } from "react-kakao-maps-sdk";
 import styled from "styled-components";
-import searchimg from "../../asset/images/search-normal.png";
+import { MagnifyingGlass } from "@phosphor-icons/react";
 
 export default function Search() {
   const SearchField = styled.div`
@@ -28,7 +28,7 @@ export default function Search() {
   return (
     <SearchField>
       <Searchbutton>
-        <img src={searchimg} />
+        <MagnifyingGlass />
       </Searchbutton>
       <Searchinput placeholder="지명 또는 음식점 이름 검색" />
     </SearchField>

@@ -103,8 +103,6 @@ export default function Favorites() {
                 reviews={item.reviews}
               />
             ))}
-
-      <BottomNav />
     </Container>
   );
 }

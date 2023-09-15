@@ -12,6 +12,8 @@ export const StyledFooter = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
 
   .MuiIconButton-root.menuIcon {
     padding: 0.5rem 0.7rem;

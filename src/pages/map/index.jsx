@@ -10,13 +10,12 @@ import {
 
 import Search from "../../components/Search";
 import BottomNav from "../../components/BottomNav";
-import Marker from '../../components/Marker';
-import mappin from '../../asset/images/mappin.svg';
+import Marker from "../../components/Marker";
+import mappin from "../../asset/images/mappin.svg";
 
 const { kakao } = window;
 
 export default function BasicMap(props) {
-  
   const Main = styled.div`
     display: flex;
     justify-content: center;
@@ -26,7 +25,7 @@ export default function BasicMap(props) {
   const InMain = styled.div``;
 
   return (
-    <Container maxWidth="sx" style={{ border: "1px solid black" }}>
+    <Container maxWidth="xs" style={{ border: "1px solid black" }}>
       <Main>
         <Search />
         <InMain>
@@ -36,9 +35,9 @@ export default function BasicMap(props) {
             center={{ lat: 33.450705, lng: 126.570677 }}
             level={3}
           >
-            <Marker/>
+            <Marker />
           </Map>
-          <BottomNav/>
+          <BottomNav />
         </InMain>
       </Main>
     </Container>
