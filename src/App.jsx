@@ -14,12 +14,12 @@
 
 import React from "react";
 import { Container } from "@mui/material";
-import SignIn from "./pages/auth/SignIn";
+import SignUp from "./pages/auth/SignUp";
 
 function App() {
   return (
     <Container maxWidth="xs">
-      <SignIn />
+      <SignUp />
     </Container>
   );
 }
