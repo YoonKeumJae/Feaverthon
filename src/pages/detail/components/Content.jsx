@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import { Star } from "@phosphor-icons/react";
@@ -49,7 +49,7 @@ const StyledConetnt = styled.div`
 `;
 
 function Content({ data }) {
-  console.log(data.description.length);
+  const [isView, setIsView] = useState(data.description.length > 100);
   return (
     <StyledConetnt>
       <div className="rating">
@@ -66,18 +66,24 @@ function Content({ data }) {
           {data.category}
         </Typography>
       </div>
-      <div className="description desEx">
-        {data.description.length > 100 ? (
-          <Typography variant="body2">
-            <Typography variant="button" className="more">
+      {isView ? (
+        <div className="description desEx">
+          <Typography variant="body2" className="desEx">
+            <Typography
+              variant="button"
+              className="more"
+              onClick={() => setIsView(false)}
+            >
               더보기
             </Typography>
             {data.description}
           </Typography>
-        ) : (
+        </div>
+      ) : (
+        <div className="description ">
           <Typography variant="body2">{data.description}</Typography>
-        )}
-      </div>
+        </div>
+      )}
     </StyledConetnt>
   );
 }
