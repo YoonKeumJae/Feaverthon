@@ -36,11 +36,11 @@ function BottomNav({ centerMenu }) {
 }
 
 // typescript 대용..
-BottomNav.propTypes = {
-  centerMenu: PropTypes.shape({
-    path: PropTypes.string,
-    icon: PropTypes.node,
-  }).isRequired,
-};
+// BottomNav.propTypes = {
+//   centerMenu: PropTypes.shape({
+//     path: PropTypes.string,
+//     icon: PropTypes.node,
+//   }).isRequired,
+// };
 
 export default BottomNav;

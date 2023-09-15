@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Map } from "react-kakao-maps-sdk";
 import styled from "styled-components";
-import searchimg from "../../../../../../../../../../images/search-normal.png";
+import searchimg from "/images/search-normal.png";
 
 export default function Search() {
   const SearchField = styled.div`
