@@ -1,3 +1,7 @@
+/* eslint-disable react/jsx-no-useless-fragment */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable import/no-extraneous-dependencies */
 import React from "react";
 import styled from "styled-components";
 import Slider from "react-slick";
@@ -77,7 +81,7 @@ function SamplePrevArrow(props) {
   );
 }
 
-const DemoPaper = () => {
+function DemoPaper() {
   const settings = {
     dots: false,
     infinite: false,
@@ -151,7 +155,7 @@ const DemoPaper = () => {
       </div>
     </>
   );
-};
+}
 
 export default function ResultList(props) {
   const ListBox = styled.div`
