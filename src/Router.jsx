@@ -12,6 +12,10 @@ import SignIn from "./pages/auth/SignIn";
 import MainWrapper from "./components/MainWrapper";
 import MainWrapper2 from "./components/MainWrapper2";
 import Reveiw from "./pages/review";
+import Mypage from "./pages/mypage/Mypage";
+import Language from "./pages/mypage/Language";
+import Modify from "./pages/mypage/Modify";
+import DetailMap from "./pages/maindetail";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +24,7 @@ const router = createBrowserRouter([
     element: <MainWrapper />,
     children: [
       { index: true, element: <BasicMap /> },
+      { path: "detailmap", element: <DetailMap /> },
       { path: "favorite", element: <Favorite /> },
       {
         path: "detail/*",
@@ -42,6 +47,18 @@ const router = createBrowserRouter([
             element: <Reveiw />,
           },
         ],
+      },
+      {
+        path: "mypage/",
+        element: <Mypage />,
+      },
+      {
+        path: "mypage/language",
+        element: <Language />,
+      },
+      {
+        path: "mypage/modify",
+        element: <Modify />,
       },
     ],
   },
