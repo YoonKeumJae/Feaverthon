@@ -17,6 +17,9 @@ import Mypage from "./pages/mypage/Mypage";
 import Language from "./pages/mypage/Language";
 import Modify from "./pages/mypage/Modify";
 
+import DemoPaper from "./pages/main";
+import DetailMap from "./pages/maindetail";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +27,7 @@ const router = createBrowserRouter([
     element: <MainWrapper />,
     children: [
       { index: true, element: <BasicMap /> },
+      { path: "detailmap", element: <DetailMap /> },
       { path: "favorite", element: <Favorite /> },
       {
         path: "detail/*",
@@ -69,6 +73,10 @@ const router = createBrowserRouter([
       { path: "signup", element: <SignUp /> },
       { path: "signin", element: <SignIn /> },
     ],
+  },
+  {
+    path: "main/",
+    element: <DemoPaper />,
   },
 ]);
 
