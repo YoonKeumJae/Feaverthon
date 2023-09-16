@@ -155,6 +155,10 @@ function Mypage() {
     e.preventDefault();
     navigate("/mypage/language");
   };
+  const modify = (e)=>{
+    e.preventDefault();
+    navigate("/mypage/modify");
+  }
   return (
     <MypageWrapper>
       <div className="header">
@@ -172,7 +176,7 @@ function Mypage() {
         <div className="userEmail">hello@hallal.com</div>
       </div>
       <div className="userSetting">
-        <div className="userSettingContent">
+        <div className="userSettingContent" onClick={modify}>
           <svg
             className="userSettingIcon"
             xmlns="http://www.w3.org/2000/svg"

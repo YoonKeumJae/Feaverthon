@@ -15,6 +15,7 @@ import Reveiw from "./pages/review";
 import WriteReview from "./pages/WriteReview";
 import Mypage from "./pages/mypage/Mypage";
 import Language from "./pages/mypage/Language";
+import Modify from "./pages/mypage/Modify";
 
 const router = createBrowserRouter([
   {
@@ -53,7 +54,11 @@ const router = createBrowserRouter([
       {
         path: "mypage/language",
         element: <Language />,
-      }
+      },
+      {
+        path: "mypage/modify",
+        element: <Modify />,
+      },
     ],
   },
   {
