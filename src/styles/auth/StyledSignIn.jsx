@@ -1,16 +1,16 @@
 import styled from "styled-components";
-// import { Background } from "../../assets/auth/Background.png";
 
 const StyledSignIn = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
+  background-image : url("../../../public/images/Background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  background-color: green;
 
   h1 {
     color: #fff;

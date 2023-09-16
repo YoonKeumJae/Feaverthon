@@ -4,6 +4,7 @@ import BasicMap from "./pages/map";
 import Favorite from "./pages/favorite";
 import Detail from "./pages/detail";
 import SignUp from "./pages/auth/SignUp";
+import SignIn from "./pages/auth/SignIn";
 import MainWrapper from "./components/MainWrapper";
 import MainWrapper2 from "./components/MainWrapper2";
 
@@ -23,7 +24,10 @@ const router = createBrowserRouter([
   {
     path: "auth/",
     element: <MainWrapper2 />,
-    children: [{ path: "signup", element: <SignUp /> }],
+    children: [
+      { path: "signup", element: <SignUp /> },
+      { path: "signin", element: <SignIn /> },
+    ],
   },
 ]);
 

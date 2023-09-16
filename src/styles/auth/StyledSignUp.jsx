@@ -74,10 +74,6 @@ const StyledSignUp = styled.div`
     margin-bottom: 24px;
   }
 
-  BackBtn {
-    position: fixed;
-    top: 50px;
-  }
   .title {
     margin-left: 16px;
     margin-top: 12px;
@@ -115,7 +111,7 @@ const StyledSignUp = styled.div`
     border-radius: 4px;
     border: none;
   }
-  button {
+  .submit {
     width: 327px;
     height: 62px;
     flex-shrink: 0;
@@ -129,6 +125,10 @@ const StyledSignUp = styled.div`
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
+  }
+  .back {
+    border: none;
+    background-color: transparent;
   }
 `;
 

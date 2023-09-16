@@ -1,21 +1,21 @@
-// import React from "react";
-// import { RecoilRoot } from "recoil";
-// import Router from "./Router";
-
-// function App() {
-//   return (
-//     <RecoilRoot>
-//       <Router />
-//     </RecoilRoot>
-//   );
-// }
-
-// export default App;
-
 import React from "react";
-import SignUp from "./pages/auth/SignUp";
+import { RecoilRoot } from "recoil";
+import Router from "./Router";
 
 function App() {
-  return <SignUp />;
+  return (
+    <RecoilRoot>
+      <Router />
+    </RecoilRoot>
+  );
 }
+
 export default App;
+
+// import React from "react";
+// import SignIn from "./pages/auth/SignIn";
+
+// function App() {
+//   return <SignIn />;
+// }
+// export default App;
