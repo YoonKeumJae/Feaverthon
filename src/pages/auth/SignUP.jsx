@@ -4,7 +4,7 @@ import axios from "axios";
 import { StyledSignUp } from "../../styles/auth";
 import BackBtn from "../../assets/BackBtn";
 
-function SignUp() {
+export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [checkPassword, setCheckPassword] = useState("");
@@ -80,5 +80,3 @@ function SignUp() {
     </StyledSignUp>
   );
 }
-
-export default SignUp;

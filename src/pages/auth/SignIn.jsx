@@ -6,7 +6,7 @@ import { tokenState } from "../../token/tokenState";
 import { StyledSignIn } from "../../styles/auth";
 import { Logo, Hello, Hala } from "../../assets/auth";
 
-function SignIn() {
+export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [token, setToken] = useRecoilState(tokenState);
@@ -82,5 +82,3 @@ function SignIn() {
     </StyledSignIn>
   );
 }
-
-export default SignIn;
