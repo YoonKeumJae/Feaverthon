@@ -59,19 +59,19 @@ const StyledRatingSheet = styled.div`
 
 const ratingFrequency = [4, 6, 2, 4, 3];
 export default function Rating({ data }) {
-  useEffect(() => {
-    axios
-      .post(
-        "https://port-0-halalservice-4fju66f2clmknyb54.sel5.cloudtype.app/auth/signup",
-        { email: "asd", password: "asd" },
-        {
-          "withCredentials": true,
-          "Content-Type": "application/json",
-        },
-      )
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-  });
+  // useEffect(() => {
+  //   axios
+  //     .post(
+  //       "https://port-0-halalservice-4fju66f2clmknyb54.sel5.cloudtype.app/auth/signup",
+  //       { email: "asd", password: "asd" },
+  //       {
+  //         "withCredentials": true,
+  //         "Content-Type": "application/json",
+  //       },
+  //     )
+  //     .then((res) => console.log(res))
+  //     .catch((err) => console.log(err));
+  // });
   return (
     <StyledRatingSheet>
       <div className="ratingLabel">
@@ -95,14 +95,12 @@ export default function Rating({ data }) {
       </div>
       <div className="ratingChart">
         {ratingFrequency.map((item, idx) => (
-          <React.Fragment key={item.toString()}>
-            <div>
-              <Typography>{Math.abs(idx - 5)}</Typography>
-              <div className="gaugeConatiner">
-                <div className="gauge" style={{ width: `${item}rem` }} />
-              </div>
+          <div key={item.toString()}>
+            <Typography>{Math.abs(idx - 5)}</Typography>
+            <div className="gaugeConatiner">
+              <div className="gauge" style={{ width: `${item}rem` }} />
             </div>
-          </React.Fragment>
+          </div>
         ))}
       </div>
     </StyledRatingSheet>

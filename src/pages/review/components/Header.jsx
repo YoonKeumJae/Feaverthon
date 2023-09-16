@@ -5,10 +5,10 @@ import { CaretLeft, Heart } from "@phosphor-icons/react";
 import primaryColor from "../../../common";
 
 const StyledHeader = styled(AppBar)`
-  background: none;
+  background-color: #fff;
   max-width: 444px;
   left: 50%;
-  top: 1rem;
+  top: 0rem;
   transform: translateX(-50%);
 
   .MuiToolbar-root {

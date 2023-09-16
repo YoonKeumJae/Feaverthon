@@ -20,7 +20,7 @@ const menu = [
         color={isVisited ? "#fff" : "#222"}
       />
     ),
-    matched: ["search", "detail"],
+    matched: ["search", "detail", "review"],
   },
   {
     path: "/favorite",
