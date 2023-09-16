@@ -27,7 +27,7 @@ export default function Detail() {
         const response = await axios.get(
           "https://port-0-halalservice-4fju66f2clmknyb54.sel5.cloudtype.app/store/1",
           {
-            Authrization: key,
+            Authrization: keystate,
           },
         );
         if (response.status === 200) {
