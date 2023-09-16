@@ -1,7 +1,3 @@
-/* eslint-disable react/jsx-no-useless-fragment */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable import/no-extraneous-dependencies */
 import React from "react";
 import styled from "styled-components";
 import Slider from "react-slick";

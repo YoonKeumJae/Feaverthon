@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import axios from "axios";
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -35,14 +33,13 @@ function SignIn() {
         },
       );
       if (response.status === 200) {
-        console.log(response.data.access_token);
+        // console.log(response.data.access_token);
         setToken(response.data.access_token);
-        // eslint-disable-next-line no-console
         navigate("/");
       }
     } catch (err) {
       alert(err.response.data.access_token);
-      console.error("로그인 실패", err);
+      // console.error("로그인 실패", err);
     }
   };
   return (
@@ -77,7 +74,7 @@ function SignIn() {
         </form>
         <div className="signupBox">
           <span className="signupQuestion">헬로할랄 회원이 아니신가요?</span>
-          <span className="signupBtn" onClick={moveToSignUp}>
+          <span aria-hidden="true" className="signupBtn" onClick={moveToSignUp}>
             회원가입
           </span>
         </div>

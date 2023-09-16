@@ -17,12 +17,12 @@ export default function InList() {
   return (
     <StyleContent>
       <div className="archiving">
-        <button style={{ all: "unset" }}>
+        <button type="button" style={{ all: "unset" }}>
           <Heart size={24} />
         </button>
       </div>
       <div className="phone">
-        <button style={{ all: "unset" }}>
+        <button type="button" style={{ all: "unset" }}>
           <Phone size={24} />
         </button>
       </div>
