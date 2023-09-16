@@ -1,91 +1,166 @@
 import React from "react";
 import styled from "styled-components";
-import Carousel from "react-material-ui-carousel";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Star } from "@phosphor-icons/react";
 
 import InList from "./List";
 
+const restaurant = [
+  {
+    title: "뉴살라딘",
+    category: "인도음식",
+    address: "대구광역시 달서구 계대동문로 17",
+    tel: "053-123-1234",
+    rating: 4.9,
+    reviews: 10,
+    location: "대구",
+  },
+  {
+    title: "뉴살라딘2",
+    category: "인도음식",
+    address: "대구광역시 달서구 계대동문로 172",
+    tel: "053-123-1234",
+    rating: 4.9,
+    reviews: 1,
+    location: "대구",
+  },
+  {
+    title: "뉴살라딘3",
+    category: "인도음식",
+    address: "대구광역시 달서구 계대동문로 172",
+    tel: "053-123-1234",
+    rating: 4.9,
+    reviews: 2,
+    location: "대구",
+  },
+  {
+    title: "뉴살라딘4",
+    category: "인도음식",
+    address: "대구광역시 달서구 계대동문로 173",
+    tel: "053-123-1234",
+    rating: 4.9,
+    reviews: 2,
+    location: "대구",
+  },
+  {
+    title: "뉴살라딘5",
+    category: "인도음식",
+    address: "대구광역시 달서구 계대동문로 174",
+    tel: "053-123-1234",
+    rating: 4.9,
+    reviews: 2,
+    location: "대구",
+  },
+];
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "red" }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "green" }}
+      onClick={onClick}
+    />
+  );
+}
+
+const DemoPaper = () => {
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    // prevArrow: <SamplePrevArrow />,
+    // nextArrow: <SamplePrevArrow />,
+  };
+
+  return (
+    <>
+      <div
+        style={{
+          position: "absolute",
+          width: "420px",
+          height: "100vh",
+          top: "0",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            width: "1000px",
+            bottom: "11rem",
+            zIndex: "9999",
+          }}
+        >
+          <Slider {...settings}>
+            {restaurant.map((item) => (
+              <>
+                <div
+                  style={{
+                    backgroundColor: "white",
+                    margin: "0 20px",
+                    width: "300px",
+                    height: "200px",
+                    borderRadius: "30px",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <img
+                      width={100}
+                      height={100}
+                      style={{ marginLeft: "-30px" }}
+                    />
+                    <div style={{ marginLeft: "30px" }}>
+                      <p style={{ marginTop: "20px" }}>
+                        <b>{item.title}</b>
+                      </p>
+                      <p style={{ marginTop: "-2px" }}>{item.category}</p>
+                      <p>
+                        <Star size={24} color="#ffff00" weight="fill" />
+                        {item.rating}({item.reviews})
+                      </p>
+                    </div>
+                  </div>
+                  <InList />
+                </div>
+              </>
+            ))}
+          </Slider>
+        </div>
+      </div>
+    </>
+  );
+};
+
 export default function ResultList(props) {
-  const restaurant = [
-    {
-      title: "뉴살라딘",
-      category: "인도음식",
-      address: "대구광역시 달서구 계대동문로 17",
-      tel: "053-123-1234",
-      rating: 4.9,
-      reviews: 10,
-      location: "대구",
-    },
-    {
-      title: "뉴살라딘2",
-      category: "인도음식",
-      address: "대구광역시 달서구 계대동문로 172",
-      tel: "053-123-1234",
-      rating: 4.9,
-      reviews: 1,
-      location: "대구",
-    },
-    {
-      title: "뉴살라딘3",
-      category: "인도음식",
-      address: "대구광역시 달서구 계대동문로 172",
-      tel: "053-123-1234",
-      rating: 4.9,
-      reviews: 2,
-      location: "대구",
-    },
-  ];
-  const List = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-
-    position: relative;
-    width: 30vw;
-    height: 10rem;
-    bottom: 12rem;
-
-    border-radius: 30px;
-    background-color: white;
-    max-width: 444px;
-    padding: 1rem 1.5rem;
-    margin: 0 20px;
-    z-index: 9999;
-  `;
   const ListBox = styled.div`
     display: flex;
   `;
 
   return (
     <ListBox>
-      <Carousel
-        navButtonsAlwaysVisible={true}
-        indicators={false}
-        autoPlay={false}
-        swipe={true}
-        gutter={5}
-        style={{ zindex: "999" }}
-      >
-        {restaurant.map((item) => (
-          <List style={{ width: "30vw", height: "100px" }}>
-            <Item item={item} />
-          </List>
-        ))}
-      </Carousel>
+      <DemoPaper />
     </ListBox>
-  );
-}
-
-function Item(props) {
-  console.log(props.item.title);
-  console.log(props.item.category);
-  console.log(props.item.address);
-  console.log(props.item.rating);
-  return (
-    <>
-      {props.item.title}
-      <p>{props.item.category}</p>
-      <InList />
-    </>
   );
 }

@@ -6,7 +6,7 @@ export default function InList() {
   const StyleContent = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 
     .archiving .phone {
       width: 1rem;
@@ -18,12 +18,12 @@ export default function InList() {
     <StyleContent>
       <div className="archiving">
         <button style={{ all: "unset" }}>
-          <Heart />
+          <Heart size={24} />
         </button>
       </div>
       <div className="phone">
         <button style={{ all: "unset" }}>
-          <Phone />
+          <Phone size={24} />
         </button>
       </div>
     </StyleContent>

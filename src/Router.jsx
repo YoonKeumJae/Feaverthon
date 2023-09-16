@@ -7,7 +7,8 @@ import SignUp from "./pages/auth/SignUp";
 import MainWrapper from "./components/MainWrapper";
 import MainWrapper2 from "./components/MainWrapper2";
 import { element } from "prop-types";
-import Main from "./pages/main";
+import DemoPaper from "./pages/main";
+import DetailMap from "./pages/maindetail";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
     element: <MainWrapper />,
     children: [
       { index: true, element: <BasicMap /> },
+      { path: "detailmap", element: <DetailMap /> },
       { path: "favorite", element: <Favorite /> },
       {
         path: "detail/:id",
@@ -29,7 +31,7 @@ const router = createBrowserRouter([
   },
   {
     path: "main/",
-    element: <Main />,
+    element: <DemoPaper />,
   },
 ]);
 

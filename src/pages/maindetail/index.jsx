@@ -10,7 +10,7 @@ import ResultList from "../../components/ResultList";
 
 const { kakao } = window;
 
-export default function BasicMap(props) {
+export default function DetailMap(props) {
   const Main = styled.div`
     display: flex;
     justify-content: center;
@@ -21,31 +21,28 @@ export default function BasicMap(props) {
 
   return (
     <Container maxWidth="xs">
-      <div style={{ overflow: "hidden" }}>
-        <Main>
-          <Search />
+      <Main>
+        <Search />
 
-          <InMain>
-            <Map
-              className="myMap"
-              style={{
-                width: "100vw",
-                maxWidth: "444px",
-                height: "calc(100svh - 7rem)",
-                zIndex: "500",
-              }}
-              center={{ lat: 33.450705, lng: 126.570677 }}
-              level={3}
-            >
-              <Marker />
-            </Map>
+        <InMain>
+          <Map
+            className="myMap"
+            style={{
+              width: "100vw",
+              maxWidth: "444px",
+              height: "calc(100svh - 7rem)",
+              zIndex: "500",
+            }}
+            center={{ lat: 33.450705, lng: 126.570677 }}
+            level={3}
+          >
+            <Marker />
+            <ZoomControl position={"BOTTOMRIGHT"} />
+          </Map>
 
-            <ResultList />
-
-            <BottomNav />
-          </InMain>
-        </Main>
-      </div>
+          <BottomNav />
+        </InMain>
+      </Main>
     </Container>
   );
 }

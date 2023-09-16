@@ -9,7 +9,8 @@ export default function Search() {
     position: fixed;
     background-color: white;
     width: 40vw;
-    min-width: 200px;
+    min-width: 300px;
+    max-width: 400px;
     height: 30px;
     top: 80px;
 
@@ -26,7 +27,8 @@ export default function Search() {
 
   const Searchinput = styled.input`
     width: 25vw;
-    min-width: 120px;
+    min-width: 180px;
+    max-width: 180px;
     border: none;
     font-size: 12pt;
   `;
