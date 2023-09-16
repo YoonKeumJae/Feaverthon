@@ -155,10 +155,14 @@ function Mypage() {
     e.preventDefault();
     navigate("/mypage/language");
   };
-  const modify = (e)=>{
+  const modify = (e) => {
     e.preventDefault();
     navigate("/mypage/modify");
-  }
+  };
+  const favorite = (e) => {
+    e.preventDefault();
+    navigate("/favorite");
+  };
   return (
     <MypageWrapper>
       <div className="header">
@@ -273,7 +277,7 @@ function Mypage() {
               stroke-linejoin="round"
             />
           </svg>
-          <div className="userSettingTitle">나의 즐겨찾기 목록</div>
+          <div className="userSettingTitle" onClick={favorite}>나의 즐겨찾기 목록</div>
           <svg
             className="rightArrow"
             xmlns="http://www.w3.org/2000/svg"
