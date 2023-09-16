@@ -17,10 +17,21 @@ export default function BasicMap(props) {
     width: 100%;
     height: 100vh;
   `;
-  const InMain = styled.div``;
+  const InMain = styled.div`
+    width: 100%;
+  `;
 
   return (
-    <Container maxWidth="xs">
+    <Container
+      maxWidth="xs"
+      sx={{
+        p: 0,
+        position: "absolute",
+        zIndex: 0,
+        left: "50%",
+        transform: "translateX(-50%)",
+      }}
+    >
       <div style={{ overflow: "hidden" }}>
         <Main>
           <Search />
@@ -29,10 +40,10 @@ export default function BasicMap(props) {
             <Map
               className="myMap"
               style={{
-                width: "100vw",
-                maxWidth: "444px",
-                height: "calc(100svh - 7rem)",
-                zIndex: "500",
+                position: "relative",
+                zIndex: 1,
+                width: "100%",
+                height: "100svh",
               }}
               center={{ lat: 33.450705, lng: 126.570677 }}
               level={3}

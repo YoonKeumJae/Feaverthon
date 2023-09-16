@@ -71,6 +71,7 @@ export default function Reveiw() {
             {data &&
               data.reviews.map((item) => (
                 <ReviewItem
+                  key={item.email}
                   data={{
                     username: "USERNAME",
                     email: item.email,

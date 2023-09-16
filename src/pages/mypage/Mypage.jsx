@@ -9,7 +9,7 @@ import BackBtn from "../../assets/BackBtn";
 
 const MypageWrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  height: clac(100svh - 7rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -277,7 +277,9 @@ function Mypage() {
               stroke-linejoin="round"
             />
           </svg>
-          <div className="userSettingTitle" onClick={favorite}>나의 즐겨찾기 목록</div>
+          <div className="userSettingTitle" onClick={favorite}>
+            나의 즐겨찾기 목록
+          </div>
           <svg
             className="rightArrow"
             xmlns="http://www.w3.org/2000/svg"
