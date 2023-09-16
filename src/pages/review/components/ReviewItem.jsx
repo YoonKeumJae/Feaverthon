@@ -26,6 +26,7 @@ export default function ReviewItem({ data }) {
         <div className="images">
           {data.images.map((item) => (
             <div
+              key={item.idx}
               className="imageItem"
               style={{ backgroundImage: `url(${item.url})` }}
             />

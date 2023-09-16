@@ -11,6 +11,7 @@ import SignUp from "./pages/auth/SignUp";
 import MainWrapper from "./components/MainWrapper";
 import MainWrapper2 from "./components/MainWrapper2";
 import Reveiw from "./pages/review";
+import WriteReview from "./pages/WriteReview";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,15 @@ const router = createBrowserRouter([
           },
         ],
       },
-      { path: "review", element: <Reveiw /> },
+      {
+        path: "review/*",
+        children: [
+          {
+            path: ":id",
+            element: <Reveiw />,
+          },
+        ],
+      },
     ],
   },
   {

@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { AppBar, IconButton, Toolbar, Typography, styled } from "@mui/material";
-import { CaretLeft, X } from "@phosphor-icons/react";
+import { CaretLeft } from "@phosphor-icons/react";
 import primaryColor from "../../../common";
 
 const StyledHeader = styled(AppBar)`
@@ -32,22 +32,16 @@ const StyledHeader = styled(AppBar)`
   }
 `;
 
-export default function Header({ title, isWrite, setIsWrite }) {
+export default function Header() {
   const navigate = useNavigate();
-
   return (
     <StyledHeader elevation={0}>
       <Toolbar>
         <div className="title">
-          <IconButton
-            onClick={() =>
-              !isWrite ? navigate(-1) : setIsWrite((prev) => !prev)
-            }
-          >
-            {!isWrite ? <CaretLeft size={12} /> : <X size={12} />}
+          <IconButton onClick={() => navigate(-1)}>
+            <CaretLeft size={12} />
           </IconButton>
-
-          <Typography variant="h6">{title}</Typography>
+          <Typography variant="h6">리뷰 작성하기</Typography>
         </div>
       </Toolbar>
     </StyledHeader>

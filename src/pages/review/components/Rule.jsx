@@ -2,10 +2,10 @@ import React from "react";
 import { Button, Typography } from "@mui/material";
 import { MoreRule, ReviewItemContainer } from "../style";
 
-export default function Rule() {
+export default function Rule({ setIsWrite }) {
   return (
     <ReviewItemContainer>
-      <Button variant="outlined" fullWidth>
+      <Button variant="outlined" fullWidth onClick={() => setIsWrite(true)}>
         리뷰 작성하기
       </Button>
       <Typography variant="body2" className="rule">
