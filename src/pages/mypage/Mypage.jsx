@@ -9,7 +9,7 @@ import BackBtn from "../../assets/BackBtn";
 
 const MypageWrapper = styled.div`
   width: 100%;
-  height: clac(100svh - 7rem);
+  height: calc(100svh - 7rem);
   display: flex;
   flex-direction: column;
   justify-content: center;

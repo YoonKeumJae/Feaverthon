@@ -18,6 +18,7 @@ import Language from "./pages/mypage/Language";
 import Modify from "./pages/mypage/Modify";
 import DetailMap from "./pages/maindetail";
 import { tokenState } from "./token/tokenState";
+import SearchPage from "./pages/search";
 
 export default function Router() {
   const [token] = useRecoilState(tokenState);
@@ -65,6 +66,7 @@ export default function Router() {
           path: "mypage/modify",
           element: <Modify />,
         },
+        { path: "search", element: <SearchPage /> },
       ],
     },
     {
