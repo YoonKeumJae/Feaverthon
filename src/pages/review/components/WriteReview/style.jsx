@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { TextField } from "@mui/material";
 
-const StyledTextField = styled(TextField)`
+export const StyledTextField = styled(TextField)`
   background-color: #f0f5fa;
   border-radius: 0.5rem;
 
@@ -11,4 +11,9 @@ const StyledTextField = styled(TextField)`
   }
 `;
 
-export default StyledTextField;
+export const StyledImg = styled.img`
+  width: 10rem;
+  height: 10rem;
+  border-radius: 1rem;
+  text-align: center;
+`;
