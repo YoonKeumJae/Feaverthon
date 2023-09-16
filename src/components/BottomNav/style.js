@@ -14,6 +14,7 @@ export const StyledFooter = styled.div`
   padding: 1rem 1.5rem;
   left: 50%;
   transform: translateX(-50%);
+  background-color: #fff;
 
   .MuiIconButton-root.menuIcon {
     padding: 0.5rem 0.7rem;

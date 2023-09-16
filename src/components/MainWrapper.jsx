@@ -6,6 +6,7 @@ export default function MainWrapper() {
   return (
     <>
       <Outlet />
+      <div style={{ height: "10rem" }} />
       <BottomNav />
     </>
   );

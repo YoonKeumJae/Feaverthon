@@ -5,7 +5,7 @@ import { List } from "@phosphor-icons/react";
 import { StyledFooter, StyledCenterButton } from "./style";
 import menu from "./data";
 
-function BottomNav({ centerMenu }) {
+function BottomNav() {
   const location = useLocation();
   const pafilldex = menu.findIndex(
     (object) => location.pathname && object.path === location.pathname,
