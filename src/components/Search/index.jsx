@@ -8,13 +8,16 @@ export default function Search() {
     display: flex;
     position: fixed;
     background-color: white;
-    width: 400px;
+    width: 40vw;
+    min-width: 200px;
     height: 30px;
     top: 80px;
 
     border: 1px solid #097629;
     border-radius: 20px;
     z-index: 999;
+    left: 50%;
+    transform: translateX(-50%);
   `;
   const Searchbutton = styled.button`
     all: unset;
@@ -22,9 +25,12 @@ export default function Search() {
   `;
 
   const Searchinput = styled.input`
+    width: 25vw;
+    min-width: 120px;
     border: none;
     font-size: 12pt;
   `;
+
   return (
     <SearchField>
       <Searchbutton>

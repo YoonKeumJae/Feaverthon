@@ -6,6 +6,8 @@ import Detail from "./pages/detail";
 import SignUp from "./pages/auth/SignUp";
 import MainWrapper from "./components/MainWrapper";
 import MainWrapper2 from "./components/MainWrapper2";
+import { element } from "prop-types";
+import Main from "./pages/main";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
     path: "auth/",
     element: <MainWrapper2 />,
     children: [{ path: "signup", element: <SignUp /> }],
+  },
+  {
+    path: "main/",
+    element: <Main />,
   },
 ]);
 

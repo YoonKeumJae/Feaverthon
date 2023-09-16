@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Container } from "@mui/material";
-import {
-  Map,
-  MapMarker,
-  MapTypeControl,
-  ZoomControl,
-} from "react-kakao-maps-sdk";
+import { Map, ZoomControl } from "react-kakao-maps-sdk";
 
 import Search from "../../components/Search";
 import BottomNav from "../../components/BottomNav";
@@ -28,15 +23,21 @@ export default function BasicMap(props) {
     <Container maxWidth="xs">
       <Main>
         <Search />
+
         <InMain>
           <Map
             className="myMap"
-            style={{ width: "50vh", maxWidth: "444px", height: "90vh" }}
+            style={{
+              width: "100vw",
+              maxWidth: "444px",
+              height: "calc(100svh - 7rem)",
+              zIndex: "500",
+            }}
             center={{ lat: 33.450705, lng: 126.570677 }}
             level={3}
           >
             <Marker />
-            <ZoomControl position={"BOTTOMRIGHT"}/>
+            <ZoomControl position={"BOTTOMRIGHT"} />
           </Map>
           <BottomNav />
           <ResultList />
