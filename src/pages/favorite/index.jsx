@@ -1,7 +1,6 @@
 import { Container, Tab, Tabs, Typography } from "@mui/material";
 import React, { useState } from "react";
 import Header from "./components/Header";
-import BottomNav from "../../components/BottomNav";
 import ReviewItem from "./components/ReviewItem";
 
 // const tab = ["전체", "대구", "경북", "서울", "부산"];

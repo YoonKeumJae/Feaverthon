@@ -16,6 +16,8 @@
     "react/require-default-props": 0,
     "import/no-unresolved": 0,
     "no-unused-vars": 1,
-    "jsx-a11y/alt-text": 1
+    "jsx-a11y/alt-text": 1,
+    "react/prop-types": 0,
+    "react/jsx-props-no-spreading": 0
   }
 }
