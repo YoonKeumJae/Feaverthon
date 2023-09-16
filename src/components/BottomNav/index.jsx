@@ -1,16 +1,17 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { IconButton } from "@mui/material";
 import { StyledFooter, StyledCenterButton } from "./style";
 import menu from "./data";
 
 function BottomNav() {
   const location = useLocation();
+  const navigate = useNavigate();
   const pathname = location.pathname.split("/")[1];
   const pillIndex = menu.findIndex(
     (item) => location.pathname && item.matched.includes(pathname),
   );
-  console.log(pillIndex, location.pathname.split("/")[1]);
+
   return (
     <StyledFooter>
       {menu.map((item, idx) => {
@@ -21,7 +22,11 @@ function BottomNav() {
             </StyledCenterButton>
           );
         return (
-          <IconButton key={item.path} className="menuIcon">
+          <IconButton
+            key={item.path}
+            className="menuIcon"
+            onClick={() => navigate(item.path)}
+          >
             {item.icon(false)}
           </IconButton>
         );
