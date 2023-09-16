@@ -1,33 +1,28 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { IconButton } from "@mui/material";
-import { List } from "@phosphor-icons/react";
 import { StyledFooter, StyledCenterButton } from "./style";
 import menu from "./data";
 
 function BottomNav() {
   const location = useLocation();
-  const pafilldex = menu.findIndex(
-    (object) => location.pathname && object.path === location.pathname,
+  const pathname = location.pathname.split("/")[1];
+  const pillIndex = menu.findIndex(
+    (item) => location.pathname && item.matched.includes(pathname),
   );
-
+  console.log(pillIndex, location.pathname.split("/")[1]);
   return (
     <StyledFooter>
       {menu.map((item, idx) => {
-        if (idx === Math.floor(menu.length / 2))
+        if (pillIndex === idx)
           return (
-            <React.Fragment key={item.path}>
-              <StyledCenterButton>
-                <List />
-              </StyledCenterButton>
-              <IconButton className="menuIcon">
-                {item.icon(pafilldex === idx)}
-              </IconButton>
-            </React.Fragment>
+            <StyledCenterButton key={item.path}>
+              {item.icon(true)}
+            </StyledCenterButton>
           );
         return (
           <IconButton key={item.path} className="menuIcon">
-            {item.icon(pafilldex === idx)}
+            {item.icon(false)}
           </IconButton>
         );
       })}

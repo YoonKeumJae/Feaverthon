@@ -1,43 +1,46 @@
 import React from "react";
 import { Heart, House, MagnifyingGlass, User } from "@phosphor-icons/react";
-import primaryColor from "../../common";
 
 const menu = [
   {
     path: "/",
     icon: (isVisited) => (
       <House
-        weight={isVisited ? "fill" : "thin"}
-        color={isVisited ? primaryColor : "#222"}
+        weight={isVisited ? "bold" : "thin"}
+        color={isVisited ? "#fff" : "#222"}
       />
     ),
+    matched: [""],
   },
   {
     path: "/search",
     icon: (isVisited) => (
       <MagnifyingGlass
-        weight={isVisited ? "fill" : "thin"}
-        color={isVisited ? primaryColor : "#222"}
+        weight={isVisited ? "bold" : "thin"}
+        color={isVisited ? "#fff" : "#222"}
       />
     ),
+    matched: ["search", "detail"],
   },
   {
     path: "/favorite",
     icon: (isVisited) => (
       <Heart
-        weight={isVisited ? "fill" : "thin"}
-        color={isVisited ? primaryColor : "#222"}
+        weight={isVisited ? "bold" : "thin"}
+        color={isVisited ? "#fff" : "#222"}
       />
     ),
+    matched: ["favorite"],
   },
   {
     path: "/mypage",
     icon: (isVisited) => (
       <User
-        weight={isVisited ? "fill" : "thin"}
-        color={isVisited ? primaryColor : "#222"}
+        weight={isVisited ? "bold" : "thin"}
+        color={isVisited ? "#fff" : "#222"}
       />
     ),
+    matched: ["mypage"],
   },
 ];
 

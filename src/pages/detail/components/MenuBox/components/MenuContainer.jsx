@@ -5,6 +5,7 @@ const MenuConatiner = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   gap: 1rem;
+  padding: 1rem 0;
 `;
 
 export default MenuConatiner;

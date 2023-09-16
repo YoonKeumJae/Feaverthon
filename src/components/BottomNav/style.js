@@ -22,8 +22,10 @@ export const StyledFooter = styled.div`
 `;
 
 export const StyledCenterButton = styled(IconButton)`
-  background-color: ${primaryColor};
-  padding: 1rem;
-  color: #fff;
-  box-shadow: 0px 2px 7px ${alpha(primaryColor, 0.7)};
+  &.MuiButtonBase-root {
+    background-color: ${primaryColor};
+    padding: 1rem;
+    color: #fff;
+    box-shadow: 0px 2px 7px ${alpha(primaryColor, 0.7)};
+  }
 `;
