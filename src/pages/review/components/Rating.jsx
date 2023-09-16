@@ -1,8 +1,7 @@
+import React from "react";
 import styled from "@emotion/styled";
 import { Typography } from "@mui/material";
 import { Star } from "@phosphor-icons/react";
-import axios from "axios";
-import React, { useEffect } from "react";
 import { primaryColor } from "../../../common";
 
 const StyledRatingSheet = styled.div`
@@ -59,19 +58,6 @@ const StyledRatingSheet = styled.div`
 
 const ratingFrequency = [5, 6, 2, 4, 3];
 export default function Rating({ data }) {
-  // useEffect(() => {
-  //   axios
-  //     .post(
-  //       "https://port-0-halalservice-4fju66f2clmknyb54.sel5.cloudtype.app/auth/signup",
-  //       { email: "asd", password: "asd" },
-  //       {
-  //         "withCredentials": true,
-  //         "Content-Type": "application/json",
-  //       },
-  //     )
-  //     .then((res) => console.log(res))
-  //     .catch((err) => console.log(err));
-  // });
   return (
     <StyledRatingSheet>
       <div className="ratingLabel">

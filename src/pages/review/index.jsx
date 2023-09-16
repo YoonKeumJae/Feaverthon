@@ -1,60 +1,85 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Divider, Stack } from "@mui/material";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { useRecoilState } from "recoil";
 import Header from "./components/Header";
 import Rating from "./components/Rating";
 import Rule from "./components/Rule";
 import ReviewItem from "./components/ReviewItem";
 import WriteReview from "./components/WriteReview";
+import { tokenState } from "../../token/tokenState";
+import { BACK_URI } from "../../common";
+
+const getReview = async (id, token) => {
+  axios.defaults.headers.common.Authorization = `${token}`;
+  const reponse = await axios
+    .get(`/api/review/${id}`, {
+      "Content-Type": "application/json",
+      "withCredentials": true,
+      "Authorization": token,
+    })
+    .then((res) => res.data)
+    .catch((err) => {
+      throw err;
+    });
+  return reponse;
+};
 
 export default function Reveiw() {
   const [isWrite, setIsWrite] = useState(false);
+  const [data, setData] = useState(undefined);
+  const { id } = useParams();
+  const [token] = useRecoilState(tokenState);
+
+  useEffect(() => {
+    getReview(id, token).then((res) => {
+      setData(res);
+    });
+  }, []);
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+
   return (
     <Container maxWidth="xs" sx={{ pt: "5rem" }}>
       <Header
-        title={!isWrite ? `방문자 리뷰 (${54}건)` : "리뷰 작성하기"}
+        title={
+          !isWrite
+            ? `방문자 리뷰 (${data && data.reviews.length}건)`
+            : "리뷰 작성하기"
+        }
         isWrite={isWrite}
         setIsWrite={setIsWrite}
       />
       {!isWrite ? (
         <>
-          <Rating data={{ rating: 3.7, ratingCount: 35, recommend: 0.88 }} />
+          <Rating
+            data={{
+              rating: data && data.scoreAvg,
+              ratingCount: data && data.reviews.length,
+              reviews: data && data.reviews,
+              recommend: 0.88,
+            }}
+          />
           <Rule setIsWrite={setIsWrite} />
 
           <Divider sx={{ mb: 2 }} />
 
           <Stack spacing={2} divider={<Divider />}>
-            <ReviewItem
-              data={{
-                username: "hello",
-                email: "asdasd@gmail.com",
-                title: "입대 10일 전, 후회 없는 선택” 🍯💯",
-                description:
-                  "이미 유명한 맛집이라서 맛은 믿고 갔어요! 세 메뉴로 먹으면 정말 배부르게 먹을 수 있답니다 💗 매장도 넓어서 쾌적하게 식사하고 올 수 있었어요. 마크니 커리에 버터 난 찍어먹으면 진짜 존맛입니다 👍",
-                rating: 4.2,
-                images: [
-                  { idx: 1, url: "https://via.placeholder.com/450.jpg" },
-                  { idx: 2, url: "https://via.placeholder.com/450.jpg" },
-                  { idx: 3, url: "https://via.placeholder.com/450.jpg" },
-                  { idx: 4, url: "https://via.placeholder.com/450.jpg" },
-                ],
-              }}
-            />
-            <ReviewItem
-              data={{
-                username: "hello",
-                email: "asdasd@gmail.com",
-                title: "입대 10일 전, 후회 없는 선택” 🍯💯",
-                description:
-                  "이미 유명한 맛집이라서 맛은 믿고 갔어요! 세 메뉴로 먹으면 정말 배부르게 먹을 수 있답니다 💗 매장도 넓어서 쾌적하게 식사하고 올 수 있었어요. 마크니 커리에 버터 난 찍어먹으면 진짜 존맛입니다 👍",
-                rating: 4.2,
-                images: [
-                  { idx: 1, url: "https://via.placeholder.com/450.jpg" },
-                  { idx: 2, url: "https://via.placeholder.com/450.jpg" },
-                  { idx: 3, url: "https://via.placeholder.com/450.jpg" },
-                  { idx: 4, url: "https://via.placeholder.com/450.jpg" },
-                ],
-              }}
-            />
+            {data &&
+              data.reviews.map((item) => (
+                <ReviewItem
+                  data={{
+                    username: "USERNAME",
+                    email: item.email,
+                    description: item.content,
+                    rating: item.score,
+                    images: [{ idx: 1, url: `${BACK_URI + item.images[0]}` }],
+                  }}
+                />
+              ))}
           </Stack>
         </>
       ) : (

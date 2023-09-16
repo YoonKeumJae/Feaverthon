@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { Box, Button, Rating, Stack, Typography } from "@mui/material";
 import { useRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
@@ -26,7 +26,6 @@ export default function WriteReview() {
   const onSubmit = () => {
     if (!inputRef.current) return;
     postReview(data, inputRef, token).then((res) => {
-      console.log(res.result);
       if (res.result) navigate("/");
     });
   };
@@ -40,11 +39,6 @@ export default function WriteReview() {
 
     inputRef.current.click();
   }, []);
-
-  useEffect(() => {
-    if (!inputRef.current) return;
-    console.log(inputRef);
-  }, [inputRef]);
 
   return (
     <Stack spacing={4} sx={{ py: 4 }}>
