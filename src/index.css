@@ -1,4 +1,7 @@
 html {
-  /* 손가락 끌기를 방지하여 조금 더 앱처럼 보이게 함 */
-  touch-action: none;
+  /* x축 손가락 끌기를 방지하여 조금 더 앱처럼 보이게 함 */
+  touch-action: pan-y;
+}
+body {
+  font-family: "Noto Sans KR", sans-serif;
 }

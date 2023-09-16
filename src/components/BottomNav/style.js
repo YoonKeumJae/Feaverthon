@@ -14,6 +14,7 @@ export const StyledFooter = styled.div`
   padding: 1rem 1.5rem;
   left: 50%;
   transform: translateX(-50%);
+  background-color: #fff;
 
   .MuiIconButton-root.menuIcon {
     padding: 0.5rem 0.7rem;
@@ -21,8 +22,10 @@ export const StyledFooter = styled.div`
 `;
 
 export const StyledCenterButton = styled(IconButton)`
-  background-color: ${primaryColor};
-  padding: 1rem;
-  color: #fff;
-  box-shadow: 0px 2px 7px ${alpha(primaryColor, 0.7)};
+  &.MuiButtonBase-root {
+    background-color: ${primaryColor};
+    padding: 1rem;
+    color: #fff;
+    box-shadow: 0px 2px 7px ${alpha(primaryColor, 0.7)};
+  }
 `;
