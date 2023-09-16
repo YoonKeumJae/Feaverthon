@@ -11,7 +11,7 @@ import {
 import Search from "../../components/Search";
 import BottomNav from "../../components/BottomNav";
 import Marker from "../../components/Marker";
-import mappin from "../../asset/images/mappin.svg";
+import ResultList from "../../components/ResultList";
 
 const { kakao } = window;
 
@@ -36,8 +36,10 @@ export default function BasicMap(props) {
             level={3}
           >
             <Marker />
+            <ZoomControl position={"BOTTOMRIGHT"}/>
           </Map>
           <BottomNav />
+          <ResultList />
         </InMain>
       </Main>
     </Container>
