@@ -3,8 +3,9 @@ import styled from "styled-components";
 const StyledSignIn = styled.div`
   width: 100%;
   height: 100vh;
+  margin: 0px;
   display: flex;
-  background-image : url("../../../public/images/Background.png");
+  background-image: url("../../../public/images/Background.png");
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -33,6 +34,9 @@ const StyledSignIn = styled.div`
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+    background-image: url("../../assets/auth/Email.png");
+    background-repeat: no-repeat;
+    background-size: 20px;
   }
   .passwordInput {
     display: flex;

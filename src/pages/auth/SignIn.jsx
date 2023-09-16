@@ -21,6 +21,10 @@ function SignIn() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!email || !password) {
+      alert("모든 항목을 입력해주세요.");
+      return;
+    }
     try {
       const response = await axios.post(
         "https://port-0-halalservice-4fju66f2clmknyb54.sel5.cloudtype.app/auth/signin",
@@ -36,6 +40,7 @@ function SignIn() {
         navigate("/");
       }
     } catch (err) {
+      alert(err.response.data.access_token);
       console.error("로그인 실패", err);
     }
   };

@@ -1,76 +1,19 @@
-// import styled from "styled-components";
-
-// const StyledSignUp = styled.div`
-//   width: 100%;
-//   height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   background-color: green;
-
-//   .text {
-//     text-align: left;
-//     color: #32343e;
-//     font-family: Sen;
-//     font-size: 13px;
-//     font-style: normal;
-//     font-weight: 400;
-//     line-height: normal;
-//     text-transform: uppercase;
-//   }
-
-//   .header {
-//     display: flex;
-//     flex-direction: row;
-//     position: fixed;
-//     top: 0;
-//     width: 100%;
-//   }
-//   backBtn {
-//     position: fixed;
-//     top: 40px;
-//     left: 50px;
-//   }
-
-//   form {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: left;
-//     justify-content: center;
-//   }
-
-//   input {
-//     margin-bottom: 10px;
-//     width: 327px;
-//     height: 62px;
-//     flex-shrink: 0;
-//     background-color: #f0f5fa;
-//     border-radius: 4px;
-//     border: none;
-//   }
-
-//   .warn {
-//     color: red;
-//   }
-// `;
-
-// export default StyledSignUp;
-
 import styled from "styled-components";
 
 const StyledSignUp = styled.div`
-  width: 327px;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   .header {
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-direction: row;
+    position: relative;
+    top: 50px;
     margin-bottom: 24px;
   }
 
@@ -91,6 +34,8 @@ const StyledSignUp = styled.div`
     justify-content: center;
     align-items: left;
     margin-left: 24px;
+    position: relative;
+    top: 67px;
   }
   span {
     color: #32343e;
