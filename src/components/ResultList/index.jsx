@@ -59,101 +59,93 @@ const restaurant = [
   },
 ];
 
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "red" }}
-      onClick={onClick}
-    />
-  );
-}
+const StyledSlider = styled(Slider)`
+  & .slideItem {
+    padding: 1rem;
+  }
+  & .slideItem > div {
+    background-color: #fff;
+    padding: 0.5rem;
+  }
+  & .slideItem div:nth-child(1) {
+    border-radius: 1rem 1rem 0 0;
+    border-bottom: 1px solid #ddd;
+  }
 
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "green" }}
-      onClick={onClick}
-    />
-  );
-}
+  & .slideItem div:nth-child(2) {
+    border-radius: 0 0 1rem 1rem;
+  }
+`;
 
 function DemoPaper() {
   const settings = {
+    useCSS: true,
     dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    // prevArrow: <SamplePrevArrow />,
-    // nextArrow: <SamplePrevArrow />,
   };
 
   return (
-    <>
+    <div
+      style={{
+        position: "absolute",
+        width: "100%",
+        height: "calc(100svh - 7rem)",
+        top: "0",
+        overflow: "hidden",
+      }}
+    >
       <div
         style={{
           position: "absolute",
-          width: "420px",
-          height: "100vh",
-          top: "0",
-          overflow: "hidden",
+          width: "1000px",
+          bottom: "3rem",
+          zIndex: "9999",
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            width: "1000px",
-            bottom: "11rem",
-            zIndex: "9999",
-          }}
-        >
-          <Slider {...settings}>
-            {restaurant.map((item) => (
-              <>
-                <div
-                  style={{
-                    backgroundColor: "white",
-                    margin: "0 20px",
-                    width: "300px",
-                    height: "200px",
-                    borderRadius: "30px",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img
-                      width={100}
-                      height={100}
-                      style={{ marginLeft: "-30px" }}
-                    />
-                    <div style={{ marginLeft: "30px" }}>
-                      <p style={{ marginTop: "20px" }}>
-                        <b>{item.title}</b>
-                      </p>
-                      <p style={{ marginTop: "-2px" }}>{item.category}</p>
-                      <p>
-                        <Star size={24} color="#ffff00" weight="fill" />
-                        {item.rating}({item.reviews})
-                      </p>
-                    </div>
-                  </div>
-                  <InList />
+        <StyledSlider {...settings}>
+          {restaurant.map((item) => (
+            <div
+              className="slideItem"
+              style={{
+                backgroundColor: "#fff",
+                margin: "0 20px",
+                width: "300px",
+                height: "200px",
+                borderRadius: "30px",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <img
+                  width={100}
+                  height={100}
+                  style={{ backgroundColor: "#ddd", marginLeft: "-30px" }}
+                />
+                <div style={{ marginLeft: "30px" }}>
+                  <p style={{ marginTop: "20px" }}>
+                    <b>{item.title}</b>
+                  </p>
+                  <p style={{ marginTop: "-2px" }}>{item.category}</p>
+                  <p>
+                    <Star size={24} color="#ffff00" weight="fill" />
+                    {item.rating}({item.reviews})
+                  </p>
                 </div>
-              </>
-            ))}
-          </Slider>
-        </div>
+              </div>
+              <InList />
+            </div>
+          ))}
+        </StyledSlider>
       </div>
-    </>
+    </div>
   );
 }
 

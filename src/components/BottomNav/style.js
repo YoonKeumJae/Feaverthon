@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { IconButton, alpha } from "@mui/material";
-import primaryColor from "../../common";
+import { primaryColor } from "../../common";
 
 export const StyledFooter = styled.div`
   position: fixed;

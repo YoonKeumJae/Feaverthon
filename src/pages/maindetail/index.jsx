@@ -15,7 +15,7 @@ export default function DetailMap(props) {
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 100vh;
+    height: clac(100svh - 7rem);
   `;
   const InMain = styled.div``;
 
@@ -37,7 +37,7 @@ export default function DetailMap(props) {
             level={3}
           >
             <Marker />
-            <ZoomControl position={"BOTTOMRIGHT"} />
+            <ZoomControl position="BOTTOMRIGHT" />
           </Map>
 
           <BottomNav />

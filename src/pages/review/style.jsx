@@ -37,8 +37,8 @@ export const StyledReviewItem = styled.div`
     padding: 0.5rem 0;
   }
   & .reviewContent .images .imageItem {
-    width: 20%;
-    aspect-ratio: 1/1;
+    width: 40%;
+    aspect-ratio: 1.333;
     background-position: center;
     background-size: cover;
     border-radius: 0.3rem;

@@ -35,6 +35,7 @@ function SignIn() {
         },
       );
       if (response.status === 200) {
+        console.log(response.data.access_token);
         setToken(response.data.access_token);
         // eslint-disable-next-line no-console
         navigate("/");

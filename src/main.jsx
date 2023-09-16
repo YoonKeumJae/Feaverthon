@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import "@fontsource-variable/noto-sans-kr";
 import App from "./App";
-import primaryColor from "./common";
+import { primaryColor } from "./common";
 
 const theme = createTheme({
   palette: {
