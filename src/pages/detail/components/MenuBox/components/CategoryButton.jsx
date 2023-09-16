@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Tab } from "@mui/material";
-import primaryColor from "../../../../../common";
+import { primaryColor } from "../../../../../common";
 
 const CategoryButton = styled((props) => <Tab disableRipple {...props} />)(
   () => ({

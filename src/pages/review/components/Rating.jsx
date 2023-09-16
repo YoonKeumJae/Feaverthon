@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 import { Star } from "@phosphor-icons/react";
 import axios from "axios";
 import React, { useEffect } from "react";
-import primaryColor from "../../../common";
+import { primaryColor } from "../../../common";
 
 const StyledRatingSheet = styled.div`
   width: 100%;
@@ -57,7 +57,7 @@ const StyledRatingSheet = styled.div`
   }
 `;
 
-const ratingFrequency = [4, 6, 2, 4, 3];
+const ratingFrequency = [5, 6, 2, 4, 3];
 export default function Rating({ data }) {
   // useEffect(() => {
   //   axios

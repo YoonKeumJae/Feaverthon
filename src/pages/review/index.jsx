@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Rating from "./components/Rating";
 import Rule from "./components/Rule";
 import ReviewItem from "./components/ReviewItem";
-import WriteReview from "../WriteReview";
+import WriteReview from "./components/WriteReview";
 
 export default function Reveiw() {
   const [isWrite, setIsWrite] = useState(false);

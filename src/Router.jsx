@@ -12,7 +12,6 @@ import SignIn from "./pages/auth/SignIn";
 import MainWrapper from "./components/MainWrapper";
 import MainWrapper2 from "./components/MainWrapper2";
 import Reveiw from "./pages/review";
-import WriteReview from "./pages/WriteReview";
 
 const router = createBrowserRouter([
   {

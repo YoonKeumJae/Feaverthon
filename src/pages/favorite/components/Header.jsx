@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { AppBar, IconButton, Toolbar, Typography, styled } from "@mui/material";
 import { CaretLeft } from "@phosphor-icons/react";
-import primaryColor from "../../../common";
+import { primaryColor } from "../../../common";
 
 const StyledHeader = styled(AppBar)`
   background-color: #fff;

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { IconButton, Typography } from "@mui/material";
 import { Plus } from "@phosphor-icons/react";
 import React from "react";
-import primaryColor from "../../../../../common";
+import { primaryColor } from "../../../../../common";
 
 const StyledMenuItem = styled.div`
   width: calc(50% - 0.5rem);
