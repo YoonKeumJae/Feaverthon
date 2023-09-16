@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { StyledSignUp } from "../../styles/auth";
+import BackBtn from "../../assets/BackBtn";
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -40,35 +41,60 @@ function SignUp() {
     setIsDuplicatedEmail(true);
   }
 
+  //   return (
+  //     <StyledSignUp>
+  //       <div className="header">
+  //         <BackBtn />
+  //         <h1>회원가입</h1>
+  //       </div>
+  //       <form>
+  //         <div className="text">이름</div>
+  //         <input type="text" placeholder="홍길동" />
+  //         <div className="text">Email</div>
+  //         <input type="email" placeholder="Email" onChange={handleEmailChange} />
+  //         {!isValidEmail && (
+  //           <span className="warn">이메일 형식이 올바르지 않습니다.</span>
+  //         )}
+  //         <button
+  //           type="button"
+  //           onClick={checkDuplicatedEmail}
+  //           disabled={!isDuplicatedEmail}
+  //         >
+  //           중복 체크
+  //         </button>
+  //         <span className="text">Password</span>
+  //         <input
+  //           type="password"
+  //           placeholder="Password"
+  //           onChange={inputPassword}
+  //         />
+  //         <input
+  //           type="password"
+  //           placeholder="Password Check"
+  //           onChange={checkPassword}
+  //         />
+  //         {!isSamePassword && (
+  //           <span className="warn">비밀번호가 일치하지 않습니다.</span>
+  //         )}
+  //         <button type="submit">Sign In</button>
+  //       </form>
+  //     </StyledSignUp>
+  //   );
+
   return (
     <StyledSignUp>
-      <h1>SignUp</h1>
+      <div className="header">
+        <BackBtn />
+        <div className="title">회원가입</div>
+      </div>
       <form>
-        <span>Email</span>
-        <input type="email" placeholder="Email" onChange={handleEmailChange} />
-        {!isValidEmail && (
-          <span className="warn">이메일 형식이 올바르지 않습니다.</span>
-        )}
-        <button
-          type="button"
-          onClick={checkDuplicatedEmail}
-          disabled={!isDuplicatedEmail}
-        >
-          중복 체크
-        </button>
-        <span>Password</span>
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={inputPassword}
-        />
-        <input
-          type="password"
-          placeholder="Password Check"
-          onChange={checkPassword}
-        />
-        {!isSamePassword && <span>비밀번호가 일치하지 않습니다.</span>}
-        <button type="submit">Sign In</button>
+        <span>이메일</span>
+        <input type="email" placeholder="hello@halal.com" />
+        <span>비밀번호</span>
+        <input type="password" placeholder="password" />
+        <span>비밀번호 확인</span>
+        <input type="password" placeholder="password" />
+        <button type="submit">회원가입</button>
       </form>
     </StyledSignUp>
   );
