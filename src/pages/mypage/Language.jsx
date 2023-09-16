@@ -45,9 +45,13 @@ const LanguageWrapper = styled.div`
     align-items: center;
     margin: 0px;
   }
-  .backBtn{
+  .backBtn {
     background: none;
     border: none;
+  }
+  input {
+    width: 20px;
+    height: 20px;
   }
 `;
 
