@@ -5,7 +5,7 @@ const StyledSignIn = styled.div`
   height: 100vh;
   margin: 0px;
   display: flex;
-  background-image: url("../../../public/images/Background.png");
+  background-image: url("../../asset/images/Background.png");
   background-size: cover;
   background-repeat: no-repeat;
 

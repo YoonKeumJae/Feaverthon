@@ -13,6 +13,8 @@ import MainWrapper from "./components/MainWrapper";
 import MainWrapper2 from "./components/MainWrapper2";
 import Reveiw from "./pages/review";
 import WriteReview from "./pages/WriteReview";
+import Mypage from "./pages/mypage/Mypage";
+import Language from "./pages/mypage/Language";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
           },
         ],
       },
+      {
+        path: "mypage/",
+        element: <Mypage />,
+      },
+      {
+        path: "mypage/language",
+        element: <Language />,
+      }
     ],
   },
   {
