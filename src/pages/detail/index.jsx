@@ -3,7 +3,7 @@ import React from "react";
 import Header from "./components/Header";
 import Images from "./components/Images";
 import Content from "./components/Content";
-import MenuItem from "./components/MenuItem";
+import MenuBox from "./components/MenuBox";
 
 const tempData = {
   title: "뉴살라딘",
@@ -23,7 +23,7 @@ export default function Detail() {
 
       <Content data={tempData} />
 
-      <MenuItem />
+      <MenuBox />
     </Container>
   );
 }

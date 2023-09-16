@@ -7,8 +7,7 @@ function CategoryTabs({ children, value, onChange }) {
       value={value}
       onChange={onChange}
       variant="scrollable"
-      scrollButtons
-      allowScrollButtonsMobile
+      scrollButtons="auto"
       TabIndicatorProps={{
         children: <span className="MuiTabs-indicatorSpan" />,
       }}
@@ -19,6 +18,7 @@ function CategoryTabs({ children, value, onChange }) {
         "& .MuiTabs-flexContainer": {
           gap: "0.5rem",
         },
+        "paddingBottom": "1rem",
       }}
     >
       {children}
